@@ -1,11 +1,16 @@
 import { Dropbox } from "dropbox";
+import fetch from "node-fetch";
 
-const accessToken = "ac1jgkyjh9l5j0p";
+const accessToken =
+  "fxe09PHf-iMAAAAAAAAAAYfY0VggObi276evWgDWyOqp4xTD4jDNgb76oie6fKCN";
 
-const dbx = new Dropbox({ accessToken, fetch });
+const dbx = new Dropbox({
+  accessToken,
+  fetch,
+});
 
 dbx
   .filesListFolder({
     path: "",
   })
-  .then((reponse) => console.log(response));
+  .then((response) => console.log(response.result.entries[0]));
